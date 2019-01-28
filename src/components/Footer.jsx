@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import logoBlanco from '../images/invie-white.png'
 
@@ -49,7 +50,7 @@ class Footer  extends Component{
               </form>
             </div>
           </footer>
-    )        
+    );
     }
 
 }
