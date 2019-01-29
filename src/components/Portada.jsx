@@ -1,6 +1,8 @@
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
+
 
 function mapStateToProps(state){
   return{

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Invie from './Invie';
 import {Provider} from 'react-redux;'
 import {createStore} from 'redux';
 
 import './index.css';
-import Invie from './Invie';
 
 import cheet from 'cheet.js';
 import logoPortada from './images/invie.png';
