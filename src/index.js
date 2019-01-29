@@ -1,19 +1,28 @@
+import Invie from './Invie';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Invie from './Invie';
-import {Provider} from 'react-redux;'
+import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
 import './index.css';
+import './css/Animation.css';
+
 
 import cheet from 'cheet.js';
 import logoPortada from './images/invie.png';
+import logoPlatzi from './images/platzi.png';
 import guitarraClassic from './images/invie-classic.png';
 import guitarraAcustica from './images/invie-acustica.png';
+import easterA from './images/easter-a.png';
+import easterB from './images/easter-b.png';
+
+
 
 import * as serviceWorker from './serviceWorker';
 
 const initialState = {
+  isAnimated: false,
+
     menu : [
      {
        href: 'index.html',
@@ -63,12 +72,34 @@ const initialState = {
 
  const store = createStore(reducer, initialState);
  const easter = {
-    menu : [
-        {
-          href: 'index.html',
-          title: 'Home',
-        }
-    ]
+
+  isAnimated: 'is-animated',
+
+  logoPortada : logoPlatzi,
+
+    // menu : [
+    //     {
+    //       href: 'index.html',
+    //       title: 'Home',
+    //     }    
+    // ],
+    guitarras : [
+      {
+        image: easterA,
+        alt: 'Guitarra padre de familia',
+        name: 'Invie Familiar',
+        features: ['Estilo vintage', 'Madera pura', 'Incluye estuche invisible de aluminio'],
+      },
+      {
+        image: easterB,
+        alt: 'Guitarra familia',
+        name: 'Invie Change',
+        features: [
+              'Listo para copiar a los Simpsoms',
+              'Aire puro',
+              'Chistes malos']
+      }
+    ],
  }
 
  cheet('i n v i e', () => {

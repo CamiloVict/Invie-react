@@ -7,7 +7,8 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 function mapStateToProps(state){
   return{
     logo: state.logoPortada,
-    menu: state.menu
+    menu: state.menu,
+    isAnimated: state.isAnimated
   }
 }
 class Portada  extends Component{
@@ -15,7 +16,7 @@ class Portada  extends Component{
     render(){
   
         return(
-    <section id="portada" className="portada background"> 
+    <section id="portada" className={`portada background ${this.props.isAnimated}`}> 
       <header id="header" className="header contenedor"> 
         <figure className="logotipo"> 
           <img src= {this.props.logo}/>
@@ -33,11 +34,19 @@ class Portada  extends Component{
           </ul>
         </nav>
       </header>
-      <div className="contenedor">
+      <CSSTransitionGroup
+      transitionName = "animationInOut"
+      transitionEnterTimeout = {800}
+      transitionLeaveTimeout = {800}>
+    {
+      !this.props.isAnimated && 
+      <div className="contenedor" key = "portada">
         <h1 className="titulo">Guitarras <span>invie</span>sibles</h1>
         <h3 className="title-a">Sé la estrella de rock que siempre quisiste ser</h3>
         <a className="button" href="#guitarras">Conoce mas</a>
       </div>
+    }
+      </CSSTransitionGroup>
     </section>     
     );      
     }
