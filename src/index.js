@@ -77,12 +77,9 @@ const initialState = {
 
   logoPortada : logoPlatzi,
 
-    // menu : [
-    //     {
-    //       href: 'index.html',
-    //       title: 'Home',
-    //     }    
-    // ],
+    menu : [
+           
+    ],
     guitarras : [
       {
         image: easterA,
